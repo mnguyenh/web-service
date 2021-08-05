@@ -37,7 +37,17 @@ function toConsole(data)
 }
 
 function bondJSON(data){
+	//Here's how I see data
 	console.log(data);
+
+	//this loads all the data on the page, but it's all bunched up
+	//$("#output").text(JSON.stringify());
+
+	//this creates a map of JSON on our page
+	let myData = JSON.stringify(data,null,4);
+	myData = "<pre>" + myData + "</pre>";
+	$("output").html(myData);
+
 }
 
 </script>
