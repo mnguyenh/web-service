@@ -55,14 +55,16 @@ function bondJSON(data){
     //here is how I see data returned via the console
     console.log(data);
 
+	//clears other clicked fils
+	$('#films').html('');
+	
 	//id's type of data returned
 	$('#filmtitle').html(data.title);
 
 	$.each(data.films,function(i,item){
 		let myFilm = bondTemplate(item);
-
-	$('<div></div').html(myFilm).appendTo('#films');
-	}
+		$('<div></div').html(myFilm).appendTo('#films');
+	});
 
     // this loads data on page but bunched up
     //$("#output").text(JSON.stringify(data));
